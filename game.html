@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>
+      cool pattern thingy
+    </title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="1900" height="950" style="border:1px solid #000000;"></canvas>
+    <script>
+      var rect_y = 0;
+      var rect_x = 0;
+      var sise = 0;
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      function random (){
+        rect_x = Math.floor(Math.random() * 1900);
+        rect_y = Math.floor(Math.random() * 900);
+        sise = Math.floor(Math.random() * 300);
+      };
+      function rect (){
+        ctx.fillRect(0,0,1900,950);
+        random();
+        ctx.fillStyle = "rgb(255,0,0)";
+        ctx.fillRect(rect_x, rect_y, sise,sise)
+        //alert("wrote red at " + rect_x);
+        random()
+        ctx.fillStyle = "rgb(255,255,0)";
+        ctx.fillRect(rect_x, rect_y, sise,sise)
+        //alert("wrote yellow at " + rect_x);
+        random()
+        ctx.fillStyle = "rgb(0,255,0)";
+        ctx.fillRect(rect_x, rect_y, sise,sise)
+        random()
+        ctx.fillStyle ="rgb(0,255,255)"
+        ctx.fillRect(rect_x, rect_y, sise,sise)
+        random()
+        ctx.fillStyle = "rgb(0,0,255)";
+        ctx.fillRect(rect_x, rect_y, sise,sise)
+        ctx.fillStyle = "rgb(0,0,0)"
+      }
+      setInterval(rect, 100);
+</script>
+  </body>
+</html>
